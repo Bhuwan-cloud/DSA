@@ -11,7 +11,7 @@ count = 1
 while i <= n 
     j = 1
     while j <= n 
-        print "#{count} "
+        print "#{count}  "
         count = count +1 
         j = j + 1
     end
