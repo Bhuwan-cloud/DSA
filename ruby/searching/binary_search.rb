@@ -1,20 +1,24 @@
-def binary_search(n, arr)
-  middle = arr.length / 2
-  i = 0
-  j = arr.length - 1
 
-  while i < j
-    if arr[middle] == n
-      return true
-    elsif arr[middle] < n
-      i = middle + 1
-      middle = i + j / 2
+def binary_search(array, target)
+  low = 0
+  high = array.length - 1
+
+  while low <= high
+    mid = (low + high) / 2
+    if array[mid] == target
+      return mid
+    elsif array[mid] < target
+      low = mid + 1
     else
-      j = middle - 1
-      middle = i + j / 2
+      high = mid - 1
     end
   end
-  false
+
+  return -1
 end
 
-binary_search 6, [2, 4, 5, 6, 7, 8, 9]
+array = [1, 2, 3, 4, 5]
+target = 3
+index = binary_search(array, target)
+puts "The target value is at index #{index}."
+
